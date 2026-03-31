@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\ChatBot\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1F176087-2DD9-6E45-9234-9A7089B023C7}|ChatBot.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\chatbot\\display.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F176087-2DD9-6E45-9234-9A7089B023C7}|ChatBot.csproj|solutionrelative:display.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1F176087-2DD9-6E45-9234-9A7089B023C7}|ChatBot.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\chatbot\\botresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F176087-2DD9-6E45-9234-9A7089B023C7}|ChatBot.csproj|solutionrelative:botresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1F176087-2DD9-6E45-9234-9A7089B023C7}|ChatBot.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\chatbot\\userinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1F176087-2DD9-6E45-9234-9A7089B023C7}|ChatBot.csproj|solutionrelative:userinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1F176087-2DD9-6E45-9234-9A7089B023C7}|ChatBot.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\chatbot\\audioplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1F176087-2DD9-6E45-9234-9A7089B023C7}|ChatBot.csproj|solutionrelative:audioplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F176087-2DD9-6E45-9234-9A7089B023C7}|ChatBot.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\chatbot\\botresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F176087-2DD9-6E45-9234-9A7089B023C7}|ChatBot.csproj|solutionrelative:botresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F176087-2DD9-6E45-9234-9A7089B023C7}|ChatBot.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\chatbot\\display.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F176087-2DD9-6E45-9234-9A7089B023C7}|ChatBot.csproj|solutionrelative:display.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1F176087-2DD9-6E45-9234-9A7089B023C7}|ChatBot.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\chatbot\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,32 +38,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "UserInput.cs",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\ChatBot\\UserInput.cs",
               "RelativeDocumentMoniker": "UserInput.cs",
               "ToolTip": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\ChatBot\\UserInput.cs",
               "RelativeToolTip": "UserInput.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-31T13:22:48.618Z"
+              "WhenOpened": "2026-03-31T13:22:48.618Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Display.cs",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\ChatBot\\Display.cs",
               "RelativeDocumentMoniker": "Display.cs",
               "ToolTip": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\ChatBot\\Display.cs",
               "RelativeToolTip": "Display.cs",
-              "ViewState": "AgIAAJQAAAAAAAAAAAAAwKwAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAUwKwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-31T11:32:08.831Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "BotResponse.cs",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\ChatBot\\BotResponse.cs",
               "RelativeDocumentMoniker": "BotResponse.cs",
@@ -71,19 +72,21 @@
               "RelativeToolTip": "BotResponse.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-31T11:31:49.245Z"
+              "WhenOpened": "2026-03-31T11:31:49.245Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "AudioPlay.cs",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\ChatBot\\AudioPlay.cs",
               "RelativeDocumentMoniker": "AudioPlay.cs",
               "ToolTip": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\ChatBot\\AudioPlay.cs",
               "RelativeToolTip": "AudioPlay.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-31T11:31:19.846Z"
+              "WhenOpened": "2026-03-31T11:31:19.846Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -95,7 +98,8 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-31T11:20:48.11Z"
+              "WhenOpened": "2026-03-31T11:20:48.11Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",

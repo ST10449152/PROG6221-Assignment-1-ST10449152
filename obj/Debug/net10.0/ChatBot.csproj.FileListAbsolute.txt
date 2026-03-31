@@ -1,0 +1,5 @@
+C:\Users\Rudy\Documents\++ClassStuff++\ChatBot\obj\Debug\net10.0\ChatBot.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rudy\Documents\++ClassStuff++\ChatBot\obj\Debug\net10.0\ChatBot.AssemblyInfoInputs.cache
+C:\Users\Rudy\Documents\++ClassStuff++\ChatBot\obj\Debug\net10.0\ChatBot.AssemblyInfo.cs
+C:\Users\Rudy\Documents\++ClassStuff++\ChatBot\obj\Debug\net10.0\ChatBot.csproj.CoreCompileInputs.cache
+C:\Users\Rudy\Documents\++ClassStuff++\ChatBot\obj\Debug\net10.0\ChatBot.sourcelink.json
