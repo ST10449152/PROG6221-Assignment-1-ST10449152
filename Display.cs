@@ -84,5 +84,90 @@ namespace ChatBot
             Console.ResetColor();
             Console.WriteLine();
         }
+        public static void LayputDivider()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+
+            Console.WriteLine("  " + new string('─', 60));
+
+            Console.ResetColor();
+        }
+        public static void LayputSectionHeader(string sectionTitle)
+        {
+            Console.ForegroundColor = colourCyberCategory;
+
+            // Math.Max(0, ...) guards against negative padding if the title is long
+            int paddingCount = Math.Max(0, 50 - sectionTitle.Length);
+            Console.WriteLine($"\n  || {sectionTitle} " + new string('=', paddingCount) + "||");
+
+            Console.ResetColor();
+        }
+        public static void AnimatedText(string text, int characterDelay = 18, ConsoleColor renderColour = ConsoleColor.White)
+        {
+            Console.ForegroundColor = renderColour;
+
+            foreach (char character in text)
+            {
+                Console.Write(character);
+                Thread.Sleep(characterDelay);
+            }
+
+            Console.WriteLine();
+            Console.ResetColor();
+        }
+        public static void RenderBotResponse(string botMessage)
+        {
+            Console.ForegroundColor = colourBotOutput;
+            Console.Write("\n  BOT: ");
+            Console.ResetColor();
+
+            AnimatedText(botMessage, 12, ConsoleColor.White);
+        }
+        public static void MultiLineBotResponse(string botMessage)
+        {
+            Console.ForegroundColor = colourBotOutput;
+            Console.WriteLine("\n  BOT:");
+            Console.ResetColor();
+
+            string[] outputLines = botMessage.Split('\n');
+
+            foreach (string line in outputLines)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("     " + line);  
+                Console.ResetColor();
+
+                Thread.Sleep(25);
+            }
+
+            Console.WriteLine();
+        }
+        public static void WarningNotification(string alertMessage)
+        {
+            Console.ForegroundColor = colourWarning;
+            Console.WriteLine($"\n  {alertMessage}");
+            Console.ResetColor();
+        }
+        public static void ValidationError(string errorMessage)
+        {
+            Console.ForegroundColor = colourError;
+            Console.WriteLine($"\n  {errorMessage}");
+            Console.ResetColor();
+        }
+        public static void UserInputPrompt(string userName)
+        {
+            Console.ForegroundColor = colourUserInput;
+
+            // Console.Write() — cursor stays on the same line, user types inline
+            Console.Write($"\n  {userName}: ");
+
+            Console.ResetColor();
+        }
+        public static void RenderSecurityCategoryTag(string cyberCategory)
+        {
+            Console.ForegroundColor = colourCyberCategory;
+            Console.WriteLine($"     Security domain: {cyberCategory}");
+            Console.ResetColor();
+        }
     }
 }
