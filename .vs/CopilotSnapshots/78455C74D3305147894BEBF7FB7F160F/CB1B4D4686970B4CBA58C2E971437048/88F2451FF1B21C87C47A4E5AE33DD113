@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Media;
+
+namespace ChatBot
+{
+    internal class AudioPlay
+    {
+        // Play an audio file located at the provided path.
+        public static void PlayAudio(string audioFilePath)
+        {
+            try
+            {
+                // Use SoundPlayer from System.Media
+                SoundPlayer player = new SoundPlayer(audioFilePath);
+                player.Play();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Error! Could not play audio file");
+            }
+        }
+    }
+}

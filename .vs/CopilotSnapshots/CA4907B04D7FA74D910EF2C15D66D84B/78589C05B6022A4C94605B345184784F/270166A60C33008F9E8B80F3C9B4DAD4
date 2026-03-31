@@ -1,0 +1,52 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ChatBot
+{
+    public class BotReply
+    {
+        public string TopicLabel { get; set; }
+        public string Message { get; set; }
+
+        public BotReply(string topicLabel, string message)
+        {
+            TopicLabel = topicLabel;
+            Message = message;
+        }
+    }
+
+    public class KnowledgeBase
+    {
+        private readonly List<BotReply> _responses = new()
+        {
+            new BotReply("Phishing", "Phishing is a scam where attackers pretend to be trustworthy entities to steal your data."),
+            new BotReply("Passwords", "Use long, unique passwords and a password manager. Avoid reuse."),
+            new BotReply("Malware", "Keep software updated and avoid running unknown attachments."),
+            new BotReply("2FA", "Enable two-factor authentication where possible for extra security."),
+        };
+
+        private readonly string[] _exitCommands = new[] { "exit", "quit", "bye" };
+
+        public bool IsExitCommand(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input)) return false;
+            var trimmed = input.Trim().ToLowerInvariant();
+            return _exitCommands.Contains(trimmed);
+        }
+
+        public BotReply FindReply(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input)) return null;
+            var lowered = input.ToLowerInvariant();
+
+            foreach (var resp in _responses)
+            {
+                if (lowered.Contains(resp.TopicLabel.ToLowerInvariant()))
+                    return resp;
+            }
+
+            return null;
+        }
+    }
+}

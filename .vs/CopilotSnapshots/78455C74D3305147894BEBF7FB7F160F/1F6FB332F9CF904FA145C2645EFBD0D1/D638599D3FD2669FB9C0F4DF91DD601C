@@ -1,0 +1,134 @@
+﻿using ChatBot;
+
+namespace ChatBot
+{
+    internal class Program
+    {
+
+        private static string GetUserName()
+        {
+            string name = string.Empty;
+
+            while (string.IsNullOrWhiteSpace(name))
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.Write("\n  🤖 BOT: ");
+                Console.ResetColor();
+                Console.Write("What is your name? ");
+
+                name = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(name))
+                {
+                    ConsoleUI.PrintWarning("Please enter your name to continue.");
+
+                    name = string.Empty;
+                }
+            }
+
+            name = name.Trim();
+            name = char.ToUpper(name[0]) + name.Substring(1);
+
+            return name;
+        }
+
+        static void Main(string[] args)
+        {
+            Console.Title = "Cybersecurity Awareness Bot";
+
+            try
+            {
+                Console.WindowWidth = Math.Max(Console.WindowWidth, 85);
+            }
+            catch
+            {
+                // Silently ignore 
+            }
+
+            //AudioPlayer audioPlayer = new AudioPlayer("greeting.wav");
+            //audioPlayer.PlayGreeting();
+
+            ConsoleEngine.TitleScreen();
+
+            Thread.Sleep(300);
+
+            ConsoleEngine.LayoutDivider();
+
+            ConsoleEngine.TypeWrite(
+                "  Welcome to the South African Cybersecurity Awareness Bot!",
+                delayMs: 10,
+                colour: ConsoleColor.Cyan);
+
+            ConsoleEngine.TypeWrite(
+                "  I'm here to help you stay safe online.\n",
+                delayMs: 10,
+                colour: ConsoleColor.White);
+
+            ConsoleEngine.LayoutDivider();
+
+            string userName = GetUserName();
+
+            ConsoleEngine.PrintBotMessage(
+                $"Nice to meet you, {userName}! " +
+                "I am your personal Cyber Security Awarness Bot" +
+                "You can ask me questions related to CyberSecurity and I will answer to the best of my ability\n" +
+                "Type 'exit', 'quit', or 'bye' at any time to leave.");
+            ConsoleEngine.LayoutDivider();
+
+            KnowledgeBase knowledgeBase = new KnowledgeBase();
+
+            UserInputChecker inputChecker = new UserInputChecker();
+
+            bool running = true;
+
+            while (running)
+            {
+                ConsoleEngine.PrintUserPrompt(userName);
+
+                string rawInput = Console.ReadLine();
+
+                if (!inputChecker.Validate(rawInput, out string errorMessage))
+                {
+                    ConsoleEngine.PrintError(errorMessage);
+                    continue;
+                }
+
+                if (knowledgeBase.IsExitCommand(rawInput))
+                {
+
+                    ConsoleEngine.PrintBotMessage(
+                        $"Goodbye, {userName}! Stay cyber-safe and always " +
+                        "think before you click. 🔐");
+
+                    running = false;
+                    break;
+                }
+
+                BotReply matchedReply = knowledgeBase.FindReply(rawInput);
+
+                if (matchedReply != null)
+                {
+                    ConsoleEngine.PrintTopicTag(matchedReply.TopicLabel);
+
+                    ConsoleEngine.PrintBotMultiLine(matchedReply.Message);
+                }
+                else
+                {
+                    ConsoleEngine.PrintBotMessage(
+                        "I didn't quite understand that. Could you rephrase?\n" +
+                        "Try asking about: phishing, passwords, malware, " +
+                        "safe browsing, social engineering, or 2FA.");
+                }
+
+                ConsoleEngine.PrintDivider();
+
+                Console.ForegroundColor = ConsoleColor.DarkGray;
+                Console.WriteLine("\n  Thank you for using the Cybersecurity Awareness Bot.");
+                Console.WriteLine("  Press any key to close...");
+                Console.ResetColor();
+
+                Console.ReadKey();
+            }
+        }
+    }
+}

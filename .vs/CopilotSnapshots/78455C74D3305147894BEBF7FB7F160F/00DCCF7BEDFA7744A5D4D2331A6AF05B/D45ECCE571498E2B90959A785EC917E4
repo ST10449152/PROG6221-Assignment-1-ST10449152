@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ChatBot
+{
+    internal class AudioPlay
+    {
+        private void PlayAudio(string audioFilePath)
+        {
+            try 
+            {
+                System.Media.SoundPlayer player = new SoundPlayer("greeting.wav");
+                player.SoundLocation = (@"C:\Users\Rudy\Documents\++ClassStuff++\ChatBot\greeting.wav"); // insert audio
+                player.Play();
+            }
+            catch 
+            {
+                Console.WritlIne("Error! Could not play audio file");
+            }
+        }
+    }
+}

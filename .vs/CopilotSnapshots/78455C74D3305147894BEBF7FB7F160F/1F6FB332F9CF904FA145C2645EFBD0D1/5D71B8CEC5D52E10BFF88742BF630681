@@ -1,0 +1,129 @@
+﻿namespace ChatBot
+{
+    internal class Program
+    {
+
+        private static string GetUserName()
+        {
+            string name = string.Empty;
+
+            while (string.IsNullOrWhiteSpace(name))
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.Write("\n  🤖 BOT: ");
+                Console.ResetColor();
+                Console.Write("What is your name? ");
+
+                name = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(name))
+                {
+                    ConsoleEngine.WarningNotification("Please enter your name to continue.");
+
+                    name = string.Empty;
+                }
+            }
+
+            name = name.Trim();
+            name = char.ToUpper(name[0]) + name.Substring(1);
+
+            return name;
+        }
+
+        static void Main(string[] args)
+        {
+            using System.Threading.Thread;
+            Console.Title = "Cybersecurity Awareness Bot";
+
+            try
+            {
+                Console.WindowWidth = Math.Max(Console.WindowWidth, 85);
+            }
+            catch
+            {
+                // Silently ignore 
+            }
+
+            // Show title screen and layout
+            ConsoleEngine.TitleScreen();
+
+            System.Threading.Thread.Sleep(300);
+
+            ConsoleEngine.LayoutDivider();
+
+            ConsoleEngine.AnimatedText(
+                "  Welcome to the South African Cybersecurity Awareness Bot!",
+                characterDelay: 10,
+                renderColour: ConsoleColor.Cyan);
+
+            ConsoleEngine.AnimatedText(
+                "  I'm here to help you stay safe online.\n",
+                characterDelay: 10,
+                renderColour: ConsoleColor.White);
+
+            ConsoleEngine.LayoutDivider();
+
+            string userName = GetUserName();
+
+            ConsoleEngine.RenderBotResponse(
+                $"Nice to meet you, {userName}! " +
+                "I am your personal Cyber Security Awarness Bot. " +
+                "You can ask me questions related to CyberSecurity and I will answer to the best of my ability\n" +
+                "Type 'exit', 'quit', or 'bye' at any time to leave.");
+
+            ConsoleEngine.LayoutDivider();
+
+            KnowledgeBase knowledgeBase = new KnowledgeBase();
+
+            var inputChecker = new UserInput.UserInputValidationService();
+
+            bool running = true;
+
+            while (running)
+            {
+                ConsoleEngine.UserInputPrompt(userName);
+
+                string rawInput = Console.ReadLine();
+
+                if (!inputChecker.ValidateUserInput(rawInput, out string errorMessage))
+                {
+                    ConsoleEngine.ValidationError(errorMessage);
+                    continue;
+                }
+
+                if (knowledgeBase.IsExitCommand(rawInput))
+                {
+                    ConsoleEngine.RenderBotResponse(
+                        $"Goodbye, {userName}! Stay cyber-safe and always think before you click. 🔐");
+
+                    running = false;
+                    break;
+                }
+
+                BotReply matchedReply = knowledgeBase.FindReply(rawInput);
+
+                if (matchedReply != null)
+                {
+                    ConsoleEngine.RenderSecurityCategoryTag(matchedReply.TopicLabel);
+                    ConsoleEngine.MultiLineBotResponse(matchedReply.Message);
+                }
+                else
+                {
+                    ConsoleEngine.RenderBotResponse(
+                        "I didn't quite understand that. Could you rephrase?\n" +
+                        "Try asking about: phishing, passwords, malware, " +
+                        "safe browsing, social engineering, or 2FA.");
+                }
+
+                ConsoleEngine.LayoutDivider();
+
+                Console.ForegroundColor = ConsoleColor.DarkGray;
+                Console.WriteLine("\n  Thank you for using the Cybersecurity Awareness Bot.");
+                Console.WriteLine("  Press any key to close...");
+                Console.ResetColor();
+
+                Console.ReadKey();
+            }
+        }
+    }
+}

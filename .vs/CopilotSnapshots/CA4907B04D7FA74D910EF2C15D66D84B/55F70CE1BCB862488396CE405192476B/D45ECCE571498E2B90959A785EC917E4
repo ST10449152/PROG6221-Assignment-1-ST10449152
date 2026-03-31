@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Diagnostics;
+using System.IO;
+
+namespace ChatBot
+{
+    internal class AudioPlay
+    {
+        public static void PlayAudio(string audioFilePath)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(audioFilePath) || !File.Exists(audioFilePath))
+                {
+                    Console.WriteLine("Error! Audio file not found.");
+                    return;
+                }
+
+                var psi = new ProcessStartInfo
+                {
+                    FileName = audioFilePath,
+                    UseShellExecute = true,
+                };
+
+                Process.Start(psi);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Error! Could not play audio file");
+            }
+        }
+    }
+}
